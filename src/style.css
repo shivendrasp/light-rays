@@ -56,8 +56,9 @@ body {
   width: 100%;
   height: 100%;
   background: #ffffff00;
+  cursor: pointer;
   /* Fade timing for #light-rays (override on .scene or :root) */
-  --rays-fade-duration: 0.5s;
+  --rays-fade-duration: 0.2s;
   --rays-fade-easing: ease;
 }
 
@@ -83,4 +84,25 @@ body {
   font-size: 4rem;
   font-weight: 300;
   letter-spacing: -0.04em;
+}
+
+#source {
+  fill: white;
+}
+
+/* Match rays: pulse only while pointer is over the SVG (#scene gets .scene-active in main.js) */
+.scene.scene-active #source {
+  animation: pulse 0.2s steps(1) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -55,7 +55,7 @@ const rayGrads = [
  *
  * Tweak TARGET_SIZE_AT_EDGE / TARGET_SIZE_AT_CENTER to taste.
  */
-const TARGET_SIZE_AT_EDGE = 100;
+const TARGET_SIZE_AT_EDGE = 60;
 const TARGET_SIZE_AT_CENTER = 200;
 
 /**
@@ -239,12 +239,14 @@ function updateSceneFromClient(clientX, clientY) {
 function onSvgPointerEnter(e) {
   pointerOverSvg = true;
   lightRays?.classList.add('rays-active');
+  svg?.classList.add('scene-active');
   updateSceneFromClient(e.clientX, e.clientY);
 }
 
 function onSvgPointerLeave() {
   pointerOverSvg = false;
   lightRays?.classList.remove('rays-active');
+  svg?.classList.remove('scene-active');
 }
 
 svg.addEventListener('pointerenter', onSvgPointerEnter);
