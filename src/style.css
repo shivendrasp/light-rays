@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tag {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff00;
+  /* Fade timing for #light-rays (override on .scene or :root) */
+  --rays-fade-duration: 0.5s;
+  --rays-fade-easing: ease;
+}
+
+/* Rays only while pointer is over the SVG; opacity fades via CSS */
+#light-rays {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--rays-fade-duration) var(--rays-fade-easing);
+}
+
+#light-rays.rays-active {
+  opacity: 1;
+}
+
+/* Film grain: filter outputs fine mono noise; blend mode applies it over the scene (white + feBlend overlay in-filter hid the grain) */
+#dust {
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.72;
+}
+
+.text {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
